@@ -11,8 +11,8 @@ function App() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-   
-    axios.get("/hi").then((res) => {
+    axios.defaults.withCredentials = true;
+    axios.get("https://vercel2-server.vercel.app/hi").then((res) => {
       console.log(res.data);
     });
   }
