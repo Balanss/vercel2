@@ -21,9 +21,12 @@ app.get("/", (req, res) => {
 });
 
 
-  app.get("/hi", (req, res) => {
-    res.json({ message: "yaya" });
-  });
+ app.get("/hi", (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "https://vercel2-frontend.vercel.app");
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.json({ message: "yaya" });
+});
 
 app.listen(3001, () => {
     console.log("Server running on port 3001");
