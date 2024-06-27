@@ -16,8 +16,9 @@ app.get("/", (req, res) => {
 });
 
 app.use(cors({
-  origin: "https://vercel2-frontend.vercel.app/", // Add the correct origin here
+  origin: "https://vercel2-frontend.vercel.app", // Add the correct origin here
   methods: ["GET", "POST"], // Adjust methods according to your needs
+  credentials: true // Enable credentials
 }));
 
   app.get("/hi", (req, res) => {
